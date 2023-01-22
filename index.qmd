@@ -1,5 +1,5 @@
 ---
-title: "my blog"
+title: "Ahmed Khaled"
 listing:
   contents: posts
   sort: "date desc"
