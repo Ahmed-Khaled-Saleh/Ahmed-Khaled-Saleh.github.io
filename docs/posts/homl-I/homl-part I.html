@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ahmed Khaled">
+<meta name="dcterms.date" content="2023-02-10">
+
+<title>Ahmed Khaled - Hands-on Machine learning Chapter 1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Ahmed Khaled</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">About</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Ahmed-Khaled-Saleh/"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/akshypothesis"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/ahmedkhaledsaleh/"><i class="bi bi-linkedin" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Hands-on Machine learning Chapter 1</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Machine learning</div>
+                <div class="quarto-category">HOML</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Ahmed Khaled </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 10, 2023</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-machine-learning" id="toc-what-is-machine-learning" class="nav-link active" data-scroll-target="#what-is-machine-learning">What is Machine learning</a></li>
+  <li><a href="#types-of-machine-learning" id="toc-types-of-machine-learning" class="nav-link" data-scroll-target="#types-of-machine-learning">Types of Machine learning</a>
+  <ul class="collapse">
+  <li><a href="#category-1-method-of-supervision-training-type" id="toc-category-1-method-of-supervision-training-type" class="nav-link" data-scroll-target="#category-1-method-of-supervision-training-type">Category 1: Method of supervision (Training type)</a></li>
+  <li><a href="#category-2-method-of-adaptation" id="toc-category-2-method-of-adaptation" class="nav-link" data-scroll-target="#category-2-method-of-adaptation">Category 2: Method of adaptation</a></li>
+  <li><a href="#category-3-method-of-generalization-modeling-type" id="toc-category-3-method-of-generalization-modeling-type" class="nav-link" data-scroll-target="#category-3-method-of-generalization-modeling-type">Category 3: Method of generalization (modeling type)</a></li>
+  </ul></li>
+  <li><a href="#main-challenges-in-machine-learning" id="toc-main-challenges-in-machine-learning" class="nav-link" data-scroll-target="#main-challenges-in-machine-learning">Main challenges in Machine learning</a></li>
+  <li><a href="#testing-and-validation" id="toc-testing-and-validation" class="nav-link" data-scroll-target="#testing-and-validation">Testing and validation</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>One of the most important books that was written in the field of machine learning ,that are easily accessible to a broad range of audience, is hands-on machine learning. Throughout a series of posts, I will try to explain a chapter by chapter. In this post, the first chapter is explained throughy.</p>
+<p>Machine learning applications are being deployed in all areas. From telecommunications to forecasting, all those applications help business decision making, and daily activities to make a better life. Facebook advertising is one example of such application that is so common to spot among the public. The following table is a summary of some applications:</p>
+<table class="table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 35%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Applications</th>
+<th>Best Models</th>
+<th>Domain</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>visual inspection defect</td>
+<td>CNN, Transformers</td>
+<td>CV</td>
+</tr>
+<tr class="even">
+<td>Text summarisation</td>
+<td>RNN, CNN, Transformers</td>
+<td>NLP</td>
+</tr>
+<tr class="odd">
+<td>Forecasting revenue</td>
+<td>SVM, RNN, CNN, Transformers</td>
+<td>Forecasting</td>
+</tr>
+<tr class="even">
+<td>Fraud detection</td>
+<td>Gaussian mixtures, Auto encoders</td>
+<td>Finance, Banking</td>
+</tr>
+<tr class="odd">
+<td>Customer segmentation</td>
+<td>K-means, DBSCAN</td>
+<td>Advertising, Social media analytics</td>
+</tr>
+</tbody>
+</table>
+<section id="what-is-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-machine-learning">What is Machine learning</h2>
+<p>Machine learning has a long history with different difinitions according to the era. The two most prevalent definitions of machine learning are:</p>
+<dl>
+<dt><strong>Arthur Samuel</strong></dt>
+<dd>
+Field of study that gives computers the ability to learn without being explicitly programmed
+</dd>
+<dt><strong>Tom Mitchell </strong></dt>
+<dd>
+A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E
+</dd>
+</dl>
+<p>The two definitions are quite interesting, but the second one is a little bit more accurate.</p>
+</section>
+<section id="types-of-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-machine-learning">Types of Machine learning</h2>
+<p>The following diagram is a concptual representation of the different categories of machine learning algorithms:</p>
+<p><img src="./ML%20TYPES.png" class="img-fluid"></p>
+<section id="category-1-method-of-supervision-training-type" class="level3">
+<h3 class="anchored" data-anchor-id="category-1-method-of-supervision-training-type">Category 1: Method of supervision (Training type)</h3>
+<p>In this category, the idea is to classify the algorithms according to the way they are trained. The two main types are:</p>
+<dl>
+<dt><strong>Supervised learning</strong></dt>
+<dd>
+The algorithm is trained with labeled data. The algorithm learns from the data and tries to predict the label of new data. The two main types of supervised learning are classification and regression.
+</dd>
+<dt><strong>Unsupervised learning</strong></dt>
+<dd>
+The algorithm is trained with unlabeled data. The algorithm tries to find patterns in the data. The two main types of unsupervised learning are clustering and dimensionality reduction.
+</dd>
+</dl>
+</section>
+<section id="category-2-method-of-adaptation" class="level3">
+<h3 class="anchored" data-anchor-id="category-2-method-of-adaptation">Category 2: Method of adaptation</h3>
+<p>This is how the algorithm adapts to new data. The two main types are:</p>
+<dl>
+<dt><strong>Batch learning</strong></dt>
+<dd>
+The algorithm is trained with all the data available. The algorithm is then deployed to production. The algorithm is not trained again unless new data is available.
+</dd>
+<dt><strong>Online learning</strong></dt>
+<dd>
+The algorithm is trained with a small batch of data. The algorithm is then deployed to production. The algorithm is trained again with new data as it becomes available.
+</dd>
+</dl>
+</section>
+<section id="category-3-method-of-generalization-modeling-type" class="level3">
+<h3 class="anchored" data-anchor-id="category-3-method-of-generalization-modeling-type">Category 3: Method of generalization (modeling type)</h3>
+<p>This is how the algorithm generalizes to new data. The two main types are:</p>
+<dl>
+<dt><strong>Instance-based learning</strong></dt>
+<dd>
+The algorithm is trained with labeled data. The algorithm learns from the data and tries to predict the label of new data. The two main types of instance-based learning are classification and regression.
+</dd>
+<dt><strong>Model-based learning</strong></dt>
+<dd>
+The algorithm is trained with labeled data. The algorithm learns from the data and tries to predict the label of new data. The two main types of model-based learning are classification and regression.
+</dd>
+</dl>
+</section>
+</section>
+<section id="main-challenges-in-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="main-challenges-in-machine-learning">Main challenges in Machine learning</h2>
+<p>The following diagram is a concptual representation of the main challenges in machine learning:</p>
+</section>
+<section id="testing-and-validation" class="level2">
+<h2 class="anchored" data-anchor-id="testing-and-validation">Testing and validation</h2>
+<p>The following diagram is a concptual representation of the main challenges in machine learning:</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

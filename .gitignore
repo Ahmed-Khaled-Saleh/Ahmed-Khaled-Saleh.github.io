@@ -1,1 +1,5 @@
 /.quarto/
+# ignore any datasets folder n any subdirectory
+**/datasets/
+
+

@@ -10,5 +10,11 @@
   },
   "posts/post-with-code/index.qmd": {
     "index.html": "502bfd27"
+  },
+  "posts/homl-I/homl-part I.qmd": {
+    "homl-part I.html": "53ccf9a9"
+  },
+  "posts/homl-2/two.qmd": {
+    "two.html": "e426c3c6"
   }
 }
