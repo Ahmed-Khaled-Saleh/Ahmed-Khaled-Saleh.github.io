@@ -1,0 +1,11 @@
+{
+  "hash": "278de5b69a30334acf2096a2c7aa3fe5",
+  "result": {
+    "markdown": "---\ntitle: Statistics for analytics\nauthor: Ahmed Khaled\ndate: 2023-04-9\ncategories:\n  - Statistics\n  - Data Analytics\ntoc: true\ntoc-depth: 3\n---\n\n# Syllabus: Statistics for analytics\n\n## Course Description:\n\nThis is a Business Statistics course, which means that we will be using statistics to solve business problems. The course is particularly important for anyone who wants to work in the field of data analytics, data science, or business intelligence. Along the way, management problems are discussed and organized. The course will cover the following topics:\n\n\n## General Instructions:\n\n- **Come to the section Prepared**.\n    - Every section, we will randomly select a sample to teach part of the section.\n- You will **Do** more than you listen.\n- Read the text Books.\n- Use the **attached resources**\n\n\n\n## Table of Contents\n\n#### Part I: Introduction to Statistics\n1.  [Introduction & Data Collection](#orga1e1b5e)\n2.  [IBM SPSS](#orga1e1b5e)\n\n#### Part II: Descriptive Statistics\n3.  [Organizing and Visualizing Data](#orga1e1b5e)\n4.  [Numerical Descriptive Measures](#orga1e1b5e)\n\n#### Part III: Probability and Probability Distributions\n5.  [Basic Probability](#orga1e1b5e)\n6.  [Discrete Probability Distributions](#orga1e1b5e)\n7.  [Normal Distribution](#orga1e1b5e)\n\n#### Part IV: Statistical Inference\n8.  [Sampling Distribution & Confidence Interval Estimation](#orga1e1b5e)\n9.  [Fundamentals of Hypothesis Testing](#orga1e1b5e)\n10. [Two Sample Tests and One-way ANOVA](#orga1e1b5e)\n11. [Chi-Square Tests](#orga1e1b5e)\n12. [Simple Linear Regression & Multiple Linear Regression](#orga1e1b5e)\n13. [Course Recap and Wrap up](#orga1e1b5e)\n\n\n## Course Assessment:\n\n- 20%: Test- Midterm\n- 20%: Assignment\n- 20%: Project\n- 40%: Final Exam\n\n\n## References:\n\n-  Statistics for Business and Economics, 13th Edition, by David R. Anderson, Dennis J. Sweeney, Thomas A. Williams, Jeffrey D. Camm, and James J. Cochran\n\n- \n\n",
+    "supporting": [
+      "homl-one_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

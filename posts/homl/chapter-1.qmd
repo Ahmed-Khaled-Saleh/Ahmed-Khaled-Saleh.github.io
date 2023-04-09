@@ -5,7 +5,7 @@ date: "2023-02-10"
 categories: [Machine learning, HOML]
 toc: true
 toc-depth: 3
-image: "img.png"
+image: "./imgs/img.png"
 jupyter: conda-root-py
 ---
 
@@ -41,7 +41,7 @@ The two definitions are quite interesting, but the second one is a little bit mo
 
 The following diagram is a concptual representation of the different categories of machine learning algorithms:
 
-![](./ML%20TYPES.png)
+![](./imgs/ML%20TYPES.png)
 
 ### Category 1: Method of supervision (Training type)
 

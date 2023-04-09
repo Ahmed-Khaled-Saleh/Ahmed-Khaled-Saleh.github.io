@@ -1,0 +1,11 @@
+{
+  "hash": "fd596127dbc11fc2d75102bd5ed718c3",
+  "result": {
+    "markdown": "---\ntitle: Statistics for analytics\nauthor: Ahmed Khaled\ndate: 2023-04-9\ncategories:\n  - Statistics\n  - Data Analytics\ntoc: true\ntoc-depth: 3\n---\n\n",
+    "supporting": [
+      "section-policy_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

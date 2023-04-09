@@ -2,8 +2,10 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/homl-2/two.html",
-      "/posts/homl-I/homl-one.html"
+      "/posts/stats-for-analytics/syllabus.html",
+      "/posts/stats-for-analytics/lecture-1-intro.html",
+      "/posts/homl/chapter-2.html",
+      "/posts/homl/chapter-1.html"
     ]
   }
 ]

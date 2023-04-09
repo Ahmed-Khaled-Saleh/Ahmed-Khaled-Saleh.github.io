@@ -4,7 +4,7 @@ author: "Ahmed Khaled"
 date: "2023-02-14"
 categories: [Machine learning, HOML]
 toc: true
-image: "../homl-I/img.png"
+image: "./imgs/img.png"
 execute:
   freeze: auto
   cache: true
@@ -249,7 +249,7 @@ test_1.equals(test_2)
 
 The following image illustrates the process of stratified random sampling:
 
-![stratified random sampling](./stra.png)
+![stratified random sampling](./imgs/stra.png)
 
 
 

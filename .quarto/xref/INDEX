@@ -19,5 +19,35 @@
   },
   "posts/homl-I/homl-one.qmd": {
     "homl-one.html": "bd850575"
+  },
+  "posts/stats-course-intro/homl-one.qmd": {
+    "homl-one.html": "33bc3e45"
+  },
+  "posts/stats-course-syllabus/homl-one.qmd": {
+    "homl-one.html": "6afa0ea4"
+  },
+  "posts/stats-course-syllabus/section policy.qmd": {
+    "section policy.html": "fe2ffdac"
+  },
+  "posts/stats-course-syllabus/section-policy.qmd": {
+    "section-policy.html": "3c817b29"
+  },
+  "posts/stats-for-analytics/homl-one.qmd": {
+    "homl-one.html": "0dae9f29"
+  },
+  "posts/stats-for-analytics/section-policy.qmd": {
+    "section-policy.html": "10ebe718"
+  },
+  "posts/stats-for-analytics/syllabus.qmd": {
+    "syllabus.html": "12dea913"
+  },
+  "posts/stats-for-analytics/lecture-1-intro.qmd": {
+    "lecture-1-intro.html": "262d894c"
+  },
+  "posts/homl/chapter-1.qmd": {
+    "chapter-1.html": "c65b737b"
+  },
+  "posts/homl/chapter-2.qmd": {
+    "chapter-2.html": "bd2ffcb5"
   }
 }

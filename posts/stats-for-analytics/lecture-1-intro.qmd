@@ -1,0 +1,16 @@
+---
+title: "Statistics for analytics: Lecture 1"
+author: "Ahmed Khaled"
+date: "2023-04-9"
+categories: [Statistics, Data Analytics]
+toc: true
+toc-depth: 3
+image: "./imgs/course-logo.jpeg"
+jupyter: conda-root-py
+---
+
+
+
+
+
+
