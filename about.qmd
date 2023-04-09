@@ -15,4 +15,4 @@ about:
 ---
 
 ## Who am I?
-Hello, My name is Ahmed Khaled, you can call me Ahmed. I am a machine learning engineer and a data scientist. This is my personal place on the internet where I create technical content and write about topics that I like and find interesting. I like to write because I first like it, and second, I want to see the gap in my knowledge when I write about something. My main area of interest lies in the intersection between computer science, mathematics, and artificial intelligence. I also like history, philosophy, psychology, and neuroscience.
+Hello, My name is Ahmed Khaled, you can call me Ahmed. I am a machine learning engineer and a data scientist. This is my personal place on the internet where I create technical content and write about topics that I like and find interesting. I like to write because, first, like it, and second, I can see the gap in my knowledge when I write about something. My main area of interest lies in the intersection between computer science, mathematics, and artificial intelligence. I also like history, philosophy, psychology, and neuroscience.
