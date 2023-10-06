@@ -1,0 +1,11 @@
+{
+  "hash": "7a681e56444e6055871ec32b063e43a2",
+  "result": {
+    "markdown": "---\ntitle: Statistics For Social Science\nauthor: Ahmed Khaled\ndate: 2023-04-9\ncategories:\n  - Statistics\n  - Data Analytics\n  - Social Science\n  - R\ntoc: true\ntoc-depth: 3\nimage: ./imgs/course-logo.jpeg\n---\n\n# Syllabus: Statistics for Social Science\n\n## Course Description:\n\nThis is another applied statistics course for social science students. The course will cover the basic concepts of statistics and their applications in social science research. It's a two-courses sequence in Princeton graduate school of social science.\n\n\n## Useful Links:\n\n- [Princeton course 1](https://bstewart.scholar.princeton.edu/soc500)\n- [Princeton course 2](https://www.princeton.edu/~mjs3/soc504_s2018.pdf)\n- [Princeton course 2](https://www.princeton.edu/~mjs3/soc504_s2018.pdf)\n- [A mathematical review of some concepts](https://pusocmethodscamp.org/)\n- [R for social science](https://clanfear.github.io/CSSS508/)\n\n\n\n## References:\n\n- Business Statistics: A Decision-Making Approach, by David Groebner, Patrick Shannon, and Phillip Fry. Pearson New International Edition: United States (2018).\n\n- Statistical techniques in business and economics, by Douglas A. Lind, William G. Marchal, and Samuel A. Wathen. 17th Edition. New York: McGraw-Hill Irwin (2018).\n\n- Business Statistics: For contemporary decision making, by Black, K. Wiley: United States (2019).\n\n",
+    "supporting": [
+      "syllabus_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

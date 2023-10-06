@@ -1,0 +1,11 @@
+{
+  "hash": "21cc5b9d0309e2f5830d7fb66a214b26",
+  "result": {
+    "markdown": "---\ntitle: Statistics For Computing\nauthor: Ahmed Khaled\ndate: 2023-04-9\ncategories:\n  - Statistics\n  - Data Analytics\n  - Computing\n  - Python\ntoc: true\ntoc-depth: 3\nimage: ./imgs/course-logo.jpeg\n---\n\n# Syllabus: Statistics for Computing\n\n## Course Description:\n\nThis is another applied statistics course but this time for computing or more formally, for data science itself. The course will cover the basic concepts of statistics and their applications in. It's a two-courses sequence in Berkeley: **Data 8** and **Data 88S**.\n\n\n## Useful Links:\n\n- [Data 8](https://www.data8.org/)\n- [Data 88S](http://stat88.org/about/)\n- [Text Book](https://inferentialthinking.com/chapters/intro.html)\n\n\n\n## References:\n\n- Business Statistics: A Decision-Making Approach, by David Groebner, Patrick Shannon, and Phillip Fry. Pearson New International Edition: United States (2018).\n\n- Statistical techniques in business and economics, by Douglas A. Lind, William G. Marchal, and Samuel A. Wathen. 17th Edition. New York: McGraw-Hill Irwin (2018).\n\n- Business Statistics: For contemporary decision making, by Black, K. Wiley: United States (2019).\n\n",
+    "supporting": [
+      "syllabus_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

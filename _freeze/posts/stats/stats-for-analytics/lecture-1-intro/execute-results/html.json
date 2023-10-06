@@ -1,0 +1,11 @@
+{
+  "hash": "0d9a4ee8441ff3ef2fb9c15161edd906",
+  "result": {
+    "markdown": "---\ntitle: 'Statistics for analytics: Lecture 1'\nauthor: Ahmed Khaled\ndate: 2023-04-9\ncategories:\n  - Statistics\n  - Data Analytics\ntoc: true\ntoc-depth: 3\nimage: ./imgs/course-logo.jpeg\n---\n\n",
+    "supporting": [
+      "lecture-1-intro_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

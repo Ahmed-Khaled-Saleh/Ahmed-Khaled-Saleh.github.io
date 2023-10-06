@@ -1,0 +1,11 @@
+{
+  "hash": "e5adcc6b6736dc7191b00ffe2defe560",
+  "result": {
+    "markdown": "---\ntitle: Data Literacy 101\nauthor: Ahmed Khaled\ndate: '2023-06-11'\ncategories:\n  - Data Scince\n  - Data Analysis\ntoc: true\ntoc-depth: 3\nimage: ./imgs/img.png\n---\n\n# Introduction\n\n",
+    "supporting": [
+      "intro_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

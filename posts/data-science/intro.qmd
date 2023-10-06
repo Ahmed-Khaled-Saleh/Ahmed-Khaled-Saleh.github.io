@@ -1,0 +1,14 @@
+---
+title: "Data Literacy 101"
+author: "Ahmed Khaled"
+date: "2023-06-11"
+categories: [Data Scince, Data Analysis]
+toc: true
+toc-depth: 3
+image: "./imgs/img.png"
+jupyter: conda-root-py
+---
+
+
+# Introduction
+

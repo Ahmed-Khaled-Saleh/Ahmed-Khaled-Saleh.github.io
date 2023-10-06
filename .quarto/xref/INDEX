@@ -49,5 +49,47 @@
   },
   "posts/homl/chapter-2.qmd": {
     "chapter-2.html": "bd2ffcb5"
+  },
+  "posts/stats-for-ss/syllabus.qmd": {
+    "syllabus.html": "8da7af10"
+  },
+  "posts/stats-for-computing/syllabus.qmd": {
+    "syllabus.html": "0aafb8f5"
+  },
+  "posts/Econometrics/syllabus.qmd": {
+    "syllabus.html": "b7a6cb19"
+  },
+  "posts/non-tech/lecture-1-intro.qmd": {
+    "lecture-1-intro.html": "10aead8d"
+  },
+  "posts/non-tech/lecture-1-intro.rtl.qmd": {
+    "lecture-1-intro.rtl.html": "1a2c0fb0"
+  },
+  "posts/non-tech/الهشاشة النفسية.qmd": {
+    "الهشاشة النفسية.html": "91a30edf"
+  },
+  "posts/non-tech/الهشاشة-النفسية.qmd.qmd": {
+    "الهشاشة-النفسية.qmd.html": "7688d1e3"
+  },
+  "posts/federated-learning/federated.qmd": {
+    "federated.html": "c73e2669"
+  },
+  "posts/stats/stats-for-analytics/syllabus.qmd": {
+    "syllabus.html": "99a332ed"
+  },
+  "posts/stats/stats-for-analytics/lecture-1-intro.qmd": {
+    "lecture-1-intro.html": "5a3123e7"
+  },
+  "posts/ml/homl/chapter-1.qmd": {
+    "chapter-1.html": "f843ce15"
+  },
+  "posts/ml/homl/chapter-2.qmd": {
+    "chapter-2.html": "e5f14f1d"
+  },
+  "posts/data-science/intro.qmd": {
+    "intro.html": "e9e8cafb"
+  },
+  "posts/non-tech/الهشاشة-النفسية.qmd": {
+    "الهشاشة-النفسية.html": "adba5e42"
   }
 }

@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ahmed Khaled">
-<meta name="dcterms.date" content="2023-04-09">
+<meta name="dcterms.date" content="2023-04-21">
 
-<title>Ahmed Khaled - Statistics for analytics: Lecture 1</title>
+<title>Ahmed Khaled - federated-learning: an introduction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,10 +115,11 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Statistics for analytics</h1>
+      <h1 class="title">federated-learning: an introduction</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Statistics</div>
-                <div class="quarto-category">Data Analytics</div>
+                <div class="quarto-category">Federated Learning</div>
+                <div class="quarto-category">Deep Learning</div>
+                <div class="quarto-category">Communication</div>
               </div>
                   </div>
   </div>
@@ -136,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">April 9, 2023</p>
+        <p class="date">April 21, 2023</p>
       </div>
     </div>
     
@@ -148,7 +149,20 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#the-lifecycle-of-a-model-training-in-federated-learning" id="toc-the-lifecycle-of-a-model-training-in-federated-learning" class="nav-link" data-scroll-target="#the-lifecycle-of-a-model-training-in-federated-learning">The lifecycle of a model training in Federated learning</a></li>
+  </ul></li>
+  <li><a href="#relaxing-the-core-fl-assumptions-emerging-settings-and-scenarios" id="toc-relaxing-the-core-fl-assumptions-emerging-settings-and-scenarios" class="nav-link" data-scroll-target="#relaxing-the-core-fl-assumptions-emerging-settings-and-scenarios">Relaxing the core FL assumptions: Emerging settings and Scenarios</a>
+  <ul class="collapse">
+  <li><a href="#fully-decentralized-fl-peer-to-peer-fl" id="toc-fully-decentralized-fl-peer-to-peer-fl" class="nav-link" data-scroll-target="#fully-decentralized-fl-peer-to-peer-fl">Fully decentralized FL: Peer-to-peer FL</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -156,8 +170,51 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<p>Federated learning is a very hot topic in the current machine learning spectrum. We can clearly see the word being advertised in many conferences, papers, and even youtube videos and meduim articles. With this hype it’s our duty to dig deeper to understand what is it all about. In this post we will try to understand the concept of federated learning and how it can be applied in real life. My goal is to summarize the technical survey published in 2021 titled <a href="https://arxiv.org/abs/1912.04977">Advances and open problems in Federated Learning</a>.</p>
+<p>The term Federated Learning is not a new sub-field of machine learning (it’s not like deep learning), it’s just a <strong>new setting</strong> for solving machine learning problems with privacy in mind. The idea is to train a model on a distributed dataset without sharing the data with a central server. This is done by training the model on each client’s data and then aggregating the model parameters to the server. The server then sends the updated model to the clients to continue the training process. This process is repeated until the model converges.</p>
+<p>The following figure illustrates a very basic federated learning process:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./imgs/federated-learning.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">federated-learning</figcaption><p></p>
+</figure>
+</div>
+<p>So, the basic idea is:</p>
+<ul>
+<li>A bunch of devices (clients) train a model locally using their own data.</li>
+<li>The model parameters are sent to a central server.</li>
+<li>The server aggregates the model parameters and sends the updated model to the clients.</li>
+<li>The clients continue the training process using the updated model.</li>
+</ul>
+<p>Having stated the basic setting of a federated learning problem, we will continue investigating the challenges and open problems in the field, one by one, and try to understand the proposed solutions and current state of the art techniques. we finsih by listing a set of tools and frameworks that can be used to implement federated learning algorithms in practice.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The term Federated Learning was introduce in 2016 bt <a href="https://arxiv.org/abs/1602.05629">McMahan et al</a>. The paper defined a set of challenges as the core assumptions of FL systems.</p>
+<p>Although the initial work of federated learning focused on <strong>cross-device</strong> learning, the interest has grown to include what we call <strong>cross-silo</strong> setting. So, the natural question should be: what are cross-device and cross-silo settings?</p>
+<ul>
+<li><p><strong>Cross-device</strong> setting: the data is distributed across multiple devices (clients). One example of this is Google Keyboard Gboard, where the data is distributed across multiple mobile devices. The clients here are mobile/edge devices. The data is stored in the messaging app (locally). and the model is trained on the device and the updated model is sent to the server.</p></li>
+<li><p><strong>Cross-silo</strong> setting: the data is distributed across multiple organizations’s servers (silos). This could happen where different hospitals come together to train a model to solve a medical problem without sharing the data with a central server. The clients here are not mobile/edge devices, rather, they are the organization’s servers.</p></li>
+</ul>
+<section id="the-lifecycle-of-a-model-training-in-federated-learning" class="level3">
+<h3 class="anchored" data-anchor-id="the-lifecycle-of-a-model-training-in-federated-learning">The lifecycle of a model training in Federated learning</h3>
+<ul>
+<li>Client Selection</li>
+<li>BroadCasting.</li>
+<li>Client Computation.</li>
+<li>Aggregation.</li>
+<li>Model Update.</li>
+</ul>
+</section>
+</section>
+<section id="relaxing-the-core-fl-assumptions-emerging-settings-and-scenarios" class="level2">
+<h2 class="anchored" data-anchor-id="relaxing-the-core-fl-assumptions-emerging-settings-and-scenarios">Relaxing the core FL assumptions: Emerging settings and Scenarios</h2>
+<p>In this section, a handful of emerging settings and scenarios are discussed. The goal is to understand the challenges and open problems in each setting and scenario and how they can solve FL problems in such settings.</p>
+<section id="fully-decentralized-fl-peer-to-peer-fl" class="level3">
+<h3 class="anchored" data-anchor-id="fully-decentralized-fl-peer-to-peer-fl">Fully decentralized FL: Peer-to-peer FL</h3>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
