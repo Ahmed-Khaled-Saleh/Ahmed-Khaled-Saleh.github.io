@@ -9,16 +9,17 @@ website:
       - about.qmd
       - icon: github
         href: https://github.com/Ahmed-Khaled-Saleh/
-      - icon: twitter
-        href: https://twitter.com/akshypothesis
       - icon: linkedin
         href: https://www.linkedin.com/in/ahmedkhaledsaleh/
 format:
   html:
     theme:
-      light: flatly
-      dark: darkly
+      # light: flatly
+      dark: slate
+    mainfont: cursive
     css: styles.css
+    fontcolor: "#ffffff"
+    linkcolor: "green"
 
 
 

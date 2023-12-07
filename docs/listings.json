@@ -2,10 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/data-science/intro.html",
       "/posts/federated-learning/federated.html",
-      "/posts/stats/stats-for-analytics/syllabus.html",
-      "/posts/stats/stats-for-analytics/lecture-1-intro.html",
       "/posts/non-tech/الهشاشة-النفسية.html",
       "/posts/ml/homl/chapter-2.html",
       "/posts/ml/homl/chapter-1.html"

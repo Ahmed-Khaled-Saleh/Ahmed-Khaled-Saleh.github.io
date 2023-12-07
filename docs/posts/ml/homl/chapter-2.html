@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.290">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -93,12 +93,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../../../styles.css">
@@ -127,11 +125,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/Ahmed-Khaled-Saleh/" rel="" target=""><i class="bi bi-github" role="img">
-</i> 
- <span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/akshypothesis" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -204,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>When starting a new code, try to import all the libraries you gonna need. The function <code>init_session()</code> is here to set the random seed to 42, so that the results are reproducible. It alse enables the warnings to be ignored (because this might be annoying).</p>
-<div class="cell" data-execution_count="2">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random, os, sys</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> shutil </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
@@ -227,7 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="getting-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="getting-the-data">Getting the data</h2>
 <p>First things first, you should get the data from the source. This source could be a sensor reading, a database, a website, or a file. In this case, the data is a CSV file. You can download it from the author’s github repository. The function <code>DataFetcher()</code> is here to download the data from the source and return a pandas dataframe. The function takes the source as an argument. The source is the URL of the data. The function checks if the data is already downloaded, if not, it downloads it and returns the dataframe. The function also creates a datasets folder if it doesn’t exist.</p>
-<div class="cell" data-execution_count="3">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> DataFetcher(<span class="op">*</span>, source):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    file_name <span class="op">=</span> Path(source).name <span class="co">#housing.tgz</span></span>
@@ -247,279 +240,33 @@ You can notice the * being passed before the source as the first parameter. In f
 </dd>
 </dl>
 <p>Now you can call the function like this:</p>
-<div class="cell" data-execution_count="4">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://github.com/ageron/data/raw/main/housing.tgz"</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>housing <span class="op">=</span> DataFetcher(source<span class="op">=</span> url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>housing is now a dataframe. You can check this using:</p>
-<div class="cell" data-execution_count="5">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(housing)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>pandas.core.frame.DataFrame</code></pre>
-</div>
 </div>
 <p>Now, you can take a look at the data using the <code>head()</code> method. This method returns the first 5 rows of the dataframe. You can also pass the number of rows you want to see as an argument.</p>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>housing.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">longitude</th>
-<th data-quarto-table-cell-role="th">latitude</th>
-<th data-quarto-table-cell-role="th">housing_median_age</th>
-<th data-quarto-table-cell-role="th">total_rooms</th>
-<th data-quarto-table-cell-role="th">total_bedrooms</th>
-<th data-quarto-table-cell-role="th">population</th>
-<th data-quarto-table-cell-role="th">households</th>
-<th data-quarto-table-cell-role="th">median_income</th>
-<th data-quarto-table-cell-role="th">median_house_value</th>
-<th data-quarto-table-cell-role="th">ocean_proximity</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>-122.23</td>
-<td>37.88</td>
-<td>41.0</td>
-<td>880.0</td>
-<td>129.0</td>
-<td>322.0</td>
-<td>126.0</td>
-<td>8.3252</td>
-<td>452600.0</td>
-<td>NEAR BAY</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>-122.22</td>
-<td>37.86</td>
-<td>21.0</td>
-<td>7099.0</td>
-<td>1106.0</td>
-<td>2401.0</td>
-<td>1138.0</td>
-<td>8.3014</td>
-<td>358500.0</td>
-<td>NEAR BAY</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>-122.24</td>
-<td>37.85</td>
-<td>52.0</td>
-<td>1467.0</td>
-<td>190.0</td>
-<td>496.0</td>
-<td>177.0</td>
-<td>7.2574</td>
-<td>352100.0</td>
-<td>NEAR BAY</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>-122.25</td>
-<td>37.85</td>
-<td>52.0</td>
-<td>1274.0</td>
-<td>235.0</td>
-<td>558.0</td>
-<td>219.0</td>
-<td>5.6431</td>
-<td>341300.0</td>
-<td>NEAR BAY</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>-122.25</td>
-<td>37.85</td>
-<td>52.0</td>
-<td>1627.0</td>
-<td>280.0</td>
-<td>565.0</td>
-<td>259.0</td>
-<td>3.8462</td>
-<td>342200.0</td>
-<td>NEAR BAY</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>housing.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Another handy function to summarize your data is the <code>info()</code> method. This method returns the number of rows, the number of columns, the column names, the data type of each column, and the number of non-null values in each column.</p>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>housing.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 20640 entries, 0 to 20639
-Data columns (total 10 columns):
- #   Column              Non-Null Count  Dtype  
----  ------              --------------  -----  
- 0   longitude           20640 non-null  float64
- 1   latitude            20640 non-null  float64
- 2   housing_median_age  20640 non-null  float64
- 3   total_rooms         20640 non-null  float64
- 4   total_bedrooms      20433 non-null  float64
- 5   population          20640 non-null  float64
- 6   households          20640 non-null  float64
- 7   median_income       20640 non-null  float64
- 8   median_house_value  20640 non-null  float64
- 9   ocean_proximity     20640 non-null  object 
-dtypes: float64(9), object(1)
-memory usage: 1.6+ MB</code></pre>
-</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>housing.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can also see the Dtype column in the output of the <code>info()</code> method. This column shows the data type of each column. You can see that the ocean_proximity column is an object. This means that it’s a string. You can check the unique values of this column using the <code>unique()</code> method.</p>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>housing.ocean_proximity.unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>array(['NEAR BAY', '&lt;1H OCEAN', 'INLAND', 'NEAR OCEAN', 'ISLAND'],
-      dtype=object)</code></pre>
-</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>housing.ocean_proximity.unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>or you can use the <code>value_counts()</code> method to get the number of instances of each value.</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>housing.ocean_proximity.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>&lt;1H OCEAN     9136
-INLAND        6551
-NEAR OCEAN    2658
-NEAR BAY      2290
-ISLAND           5
-Name: ocean_proximity, dtype: int64</code></pre>
-</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>housing.ocean_proximity.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Since most columns (Also called features, dependent variable, predictors, attributes) are numerical, you can use the <code>describe()</code> method to get the summary of the numerical columns. This is quite useful to get a quick overview of the data. We can see that this is literally a sumaary of statistics. The count, mean, std, min, max, and the percentiles AKA <code>descriptive statistics</code>.</p>
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>housing.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">longitude</th>
-<th data-quarto-table-cell-role="th">latitude</th>
-<th data-quarto-table-cell-role="th">housing_median_age</th>
-<th data-quarto-table-cell-role="th">total_rooms</th>
-<th data-quarto-table-cell-role="th">total_bedrooms</th>
-<th data-quarto-table-cell-role="th">population</th>
-<th data-quarto-table-cell-role="th">households</th>
-<th data-quarto-table-cell-role="th">median_income</th>
-<th data-quarto-table-cell-role="th">median_house_value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">count</td>
-<td>20640.000000</td>
-<td>20640.000000</td>
-<td>20640.000000</td>
-<td>20640.000000</td>
-<td>20433.000000</td>
-<td>20640.000000</td>
-<td>20640.000000</td>
-<td>20640.000000</td>
-<td>20640.000000</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">mean</td>
-<td>-119.569704</td>
-<td>35.631861</td>
-<td>28.639486</td>
-<td>2635.763081</td>
-<td>537.870553</td>
-<td>1425.476744</td>
-<td>499.539680</td>
-<td>3.870671</td>
-<td>206855.816909</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">std</td>
-<td>2.003532</td>
-<td>2.135952</td>
-<td>12.585558</td>
-<td>2181.615252</td>
-<td>421.385070</td>
-<td>1132.462122</td>
-<td>382.329753</td>
-<td>1.899822</td>
-<td>115395.615874</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">min</td>
-<td>-124.350000</td>
-<td>32.540000</td>
-<td>1.000000</td>
-<td>2.000000</td>
-<td>1.000000</td>
-<td>3.000000</td>
-<td>1.000000</td>
-<td>0.499900</td>
-<td>14999.000000</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">25%</td>
-<td>-121.800000</td>
-<td>33.930000</td>
-<td>18.000000</td>
-<td>1447.750000</td>
-<td>296.000000</td>
-<td>787.000000</td>
-<td>280.000000</td>
-<td>2.563400</td>
-<td>119600.000000</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">50%</td>
-<td>-118.490000</td>
-<td>34.260000</td>
-<td>29.000000</td>
-<td>2127.000000</td>
-<td>435.000000</td>
-<td>1166.000000</td>
-<td>409.000000</td>
-<td>3.534800</td>
-<td>179700.000000</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">75%</td>
-<td>-118.010000</td>
-<td>37.710000</td>
-<td>37.000000</td>
-<td>3148.000000</td>
-<td>647.000000</td>
-<td>1725.000000</td>
-<td>605.000000</td>
-<td>4.743250</td>
-<td>264725.000000</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">max</td>
-<td>-114.310000</td>
-<td>41.950000</td>
-<td>52.000000</td>
-<td>39320.000000</td>
-<td>6445.000000</td>
-<td>35682.000000</td>
-<td>6082.000000</td>
-<td>15.000100</td>
-<td>500001.000000</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>housing.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="creating-a-test-set-or-sampling-101" class="level3">
 <h3 class="anchored" data-anchor-id="creating-a-test-set-or-sampling-101">Creating a Test Set OR Sampling 101</h3>
@@ -568,16 +315,16 @@ Name: ocean_proximity, dtype: int64</code></pre>
 <p>This works because train_indices is a list of integers, and the <code>iloc</code> method takes a list of integers as an argument and returns the corresponding rows.</p></li>
 </ul>
 <p>The following code illustrates the process of simple random sampling:</p>
-<div id="simple-random-sampling" class="cell center" alt="Simple Random Sampling" data-attr="align=&quot;center&quot;" data-caption="Simple Random Sampling" data-fig-class="center" height="400px" width="400px" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> shuffle_and_split_data(data, test_ratio):</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    np.random.seed(<span class="dv">42</span>)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    shuffled_indices <span class="op">=</span> np.random.permutation(<span class="bu">len</span>(data))</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    test_set_size <span class="op">=</span> <span class="bu">int</span>(<span class="bu">len</span>(data) <span class="op">*</span> test_ratio)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    test_indices <span class="op">=</span> shuffled_indices[:test_set_size]</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    train_indices <span class="op">=</span> shuffled_indices[test_set_size:]</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> data.iloc[train_indices], data.iloc[test_indices]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="simple-random-sampling" class="cell center" data-caption="Simple Random Sampling" width="400px" height="400px" alt="Simple Random Sampling" data-fig-class="center" data-attr="align=&quot;center&quot;">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> shuffle_and_split_data(data, test_ratio):</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    shuffled_indices <span class="op">=</span> np.random.permutation(<span class="bu">len</span>(data))</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    test_set_size <span class="op">=</span> <span class="bu">int</span>(<span class="bu">len</span>(data) <span class="op">*</span> test_ratio)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    test_indices <span class="op">=</span> shuffled_indices[:test_set_size]</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    train_indices <span class="op">=</span> shuffled_indices[test_set_size:]</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> data.iloc[train_indices], data.iloc[test_indices]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>There are a problem with this approach:</p>
 <ul>
@@ -594,22 +341,16 @@ Name: ocean_proximity, dtype: int64</code></pre>
 <li>This could be tricky to understand why this solution is not perfect. So, let us try it:</li>
 </ul></li>
 </ul>
-<div id="random-seed-expirement" class="cell center" alt="Random seed expirement" data-attr="align=&quot;center&quot;" data-caption="Random seed expirement" data-fig-class="center" height="400px" width="400px" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>train_1, test_1 <span class="op">=</span> shuffle_and_split_data(housing, <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="random-seed-expirement" class="cell center" data-caption="Random seed expirement" width="400px" height="400px" alt="Random seed expirement" data-fig-class="center" data-attr="align=&quot;center&quot;">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>train_1, test_1 <span class="op">=</span> shuffle_and_split_data(housing, <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre><code>- Now, let us run the code again:</code></pre>
-<div class="cell center" alt="Random seed expirement 2" data-attr="align=&quot;center&quot;" data-caption="Random seed expirement 2" data-fig-class="center" height="400px" width="400px" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>housing <span class="op">=</span> DataFetcher(source<span class="op">=</span>url)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>train_2, test_2 <span class="op">=</span> shuffle_and_split_data(housing, <span class="fl">0.2</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(train_1.equals(train_2))</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>test_1.equals(test_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>True</code></pre>
-</div>
-<div id="random-seed-expirement-2" class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>True</code></pre>
-</div>
+<div id="random-seed-expirement-2" class="cell center" data-caption="Random seed expirement 2" width="400px" height="400px" alt="Random seed expirement 2" data-fig-class="center" data-attr="align=&quot;center&quot;">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>housing <span class="op">=</span> DataFetcher(source<span class="op">=</span>url)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>train_2, test_2 <span class="op">=</span> shuffle_and_split_data(housing, <span class="fl">0.2</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(train_1.equals(train_2))</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>test_1.equals(test_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Use each instance’s identifier to decide whether or not it should go in the test set (assuming instances have a unique and immutable identifier). For example, you could compute a hash of each instance’s identifier, keep only the last byte of the hash, and put the instance in the test set if this value is lower or equal to 51 (256 * 0.2 = 51.2). This ensures that the test set will remain consistent across multiple runs, even if you refresh the dataset. The new test set will contain 20% of the new instances, but it will not contain any instance that was previously in the training set.</li>
@@ -620,8 +361,8 @@ Name: ocean_proximity, dtype: int64</code></pre>
 <p>The following image illustrates the process of stratified random sampling:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="./imgs/stra.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">stratified random sampling</figcaption><p></p>
+<p><img src="./imgs/stra.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">stratified random sampling</figcaption>
 </figure>
 </div>
 </section>
@@ -631,18 +372,13 @@ Name: ocean_proximity, dtype: int64</code></pre>
 <h2 class="anchored" data-anchor-id="exploring-the-data">Exploring the data</h2>
 <p>Next stage is to gain some insights by looking at your data. This is one of the most important steps in the machine learning pipeline. The effect of this step is that it will unlock some structure in the data, like the outliers, the missing values, the noise, and the correlation between the features. This will help you in the next steps of the pipeline.</p>
 <p>We shall start by visualizing the distribution of the features. This is done by plotting the histogram of each feature. The <code>hist()</code> method is used to plot the histogram. The <code>bins</code> argument is used to specify the number of bins. The <code>figsize</code> argument is used to specify the size of the figure. The <code>plt.show()</code> is used to display the figure.</p>
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>housing.hist(bins<span class="op">=</span><span class="dv">50</span>, figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">8</span>))</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
 <div id="fig-hist" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="chapter-2_files/figure-html/fig-hist-output-1.png" width="965" height="757" class="figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: A histogram of the numerical features.</figcaption><p></p>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>housing.hist(bins<span class="op">=</span><span class="dv">50</span>, figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">8</span>))</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<figcaption class="figure-caption">Figure&nbsp;1: <strong>?(caption)</strong></figcaption>
 </figure>
-</div>
-</div>
 </div>
 <p><a href="#fig-hist">Figure&nbsp;1</a> is a histogram of the numerical features. We will dive into the kind of visualization that we should use according to the data type and the task in a separate blog post. For now, we can say that for numerical features, hisograms are the most suitable visualization type to use.</p>
 <!--
@@ -881,7 +617,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  let localAlternateSentinel = 'alternate';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 

@@ -6,7 +6,7 @@ categories: [Machine learning, HOML]
 toc: true
 toc-depth: 3
 image: "./imgs/img.png"
-jupyter: conda-root-py
+
 ---
 
 

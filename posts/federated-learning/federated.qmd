@@ -6,7 +6,7 @@ categories: [Federated Learning, Deep Learning, Communication]
 toc: true
 #toc-depth: 3
 #image: "./imgs/course-logo.jpeg"
-jupyter: conda-root-py
+
 ---
 
 
