@@ -19,7 +19,7 @@ format:
     mainfont: cursive
     css: styles.css
     fontcolor: "#ffffff"
-    linkcolor: "green"
+    linkcolor: "Blue"
 
 
 
